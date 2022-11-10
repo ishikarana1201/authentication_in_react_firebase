@@ -14,18 +14,23 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to='/'>
-        <div className={classes.logo}>React Auth</div>
+        <div className={classes.logo}>Post Management</div>
       </Link>
       <nav>
         <ul>
           {!isLoggedIn && (
             <li>
-            <Link to='/auth'>Login</Link>
+            <Link to='/auth'>Sign In / Sign Up</Link>
           </li>
           )}
           {isLoggedIn && (
             <li>
             <Link to='/profile'>Profile</Link>
+          </li>
+          )}
+          {isLoggedIn && (
+            <li>
+            <Link to='/add-post'>Add Post</Link>
           </li>
           )}
           {isLoggedIn && (

@@ -1,8 +1,10 @@
 .header {
   width: 100%;
   height: 5rem;
-  background-color: #38015c;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* background-color: #38015c; */
+  background-color: #082979;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,10 +48,14 @@
 }
 
 .header a:hover {
-  color: #c291e2;
+  /* color: #c291e2; */
+    color:#839CD8;
 }
 
 .header button:hover {
-  background-color: #c291e2;
-  color: #38015c;
+  /* background-color: #c291e2;
+  color: #38015c; */
+  background-color: #839CD8;
+  color:#082979;
+
 }

@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
 import UserProfile from './components/Profile/UserProfile';
+import AddPostPage from './pages/AddPostPage';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import AuthContext from './store/auth-context';
@@ -26,6 +27,12 @@ function App() {
           {!authctx.isLoggedIn && <Redirect to="/auth" />}
           
         </Route>
+        {/* Add Post Route */}
+        <Route path='/add-post'>
+          {authctx.isLoggedIn && <AddPostPage/>}
+          {!authctx.isLoggedIn && <Redirect to="/auth" />}
+        </Route>
+        
         <Route path="*">
           <Redirect to="/"/>
         </Route>

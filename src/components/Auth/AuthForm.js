@@ -1,8 +1,10 @@
 import { useContext, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import classes from "./AuthForm.module.css";
+
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -62,13 +64,15 @@ const AuthForm = () => {
         const expirationTime = new Date(new Date().getTime() + (+data.expiresIn*1000));
         authctx.login(data.idToken,expirationTime.toISOString());
       history.replace('/')
-
       })
       .catch((err) => {
-        alert(err.message);
+        // alert(err.message);
+       
+        toast.error(err.message)
       });
   };
   return (
+    <>
     <section className={classes.auth}>
       <h1>{isLogin ? "Sign In" : "Sign Up"}</h1>
       <hr/>
@@ -96,6 +100,18 @@ const AuthForm = () => {
         </div>
       </form>
     </section>
+      <ToastContainer 
+      position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"/>
+      </>
   );
 };
 
